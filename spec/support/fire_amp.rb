@@ -1,7 +1,7 @@
 require_relative 'spy'
 
-class FireAMP
-  include Spy
+class FireAMPDirect
+  include HTTParty
 
   base_uri ENV['API_BASE_URI']
   headers('Accept' => 'application/json',
@@ -12,4 +12,8 @@ class FireAMP
     {api_key: ENV['FIREAMP_API_KEY'], client_id: ENV['FIREAMP_CLIENT_ID']}
   end
 
+end
+
+class FireAMP < FireAMPDirect
+  include Spy
 end
