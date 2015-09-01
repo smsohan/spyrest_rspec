@@ -1,4 +1,3 @@
-puts "Loaded"
 require_relative 'spy'
 
 class FireAMP
