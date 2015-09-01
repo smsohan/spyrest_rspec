@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
+require 'dotenv'
+Dotenv.load
 
 $:.unshift File.dirname(File.dirname(__FILE__))
 Dir[("spec/support/**/*.rb")].each {|f| require f}
