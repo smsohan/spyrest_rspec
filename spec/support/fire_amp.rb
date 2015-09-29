@@ -4,7 +4,7 @@ class FireAMPDirect
   include HTTParty
 
   def self.common_parameters
-    {api_key: ENV['FIREAMP_API_KEY'], client_id: ENV['FIREAMP_CLIENT_ID']}
+    {basic_auth: {username: ENV['FIREAMP_CLIENT_ID'], password: ENV['FIREAMP_API_KEY']}}
   end
 
   def self.init_httparty
